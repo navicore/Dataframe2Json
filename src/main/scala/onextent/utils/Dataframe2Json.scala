@@ -17,9 +17,10 @@ object Dataframe2Json {
     case _ => JSONFormat defaultFormatter t
   }
 
-  def apply(df: DataFrame): String = {
+  def apply(df: DataFrame): Option[String] = {
     val str:String = df.toJSON.coalesce(1).collect().mkString("\n")
-    format(JSON.parseRaw("[" + ("}\n".r replaceAllIn (str, "},\n")) + "]"))
+    val result:String = format(JSON.parseRaw("[" + ("}\n".r replaceAllIn (str, "},\n")) + "]"))
+    Some(result)
   }
 
 }
