@@ -9,4 +9,6 @@ libraryDependencies ++= Seq(
   "net.sf.opencsv" % "opencsv" % "2.3",
   "io.spray" %%  "spray-json" % "1.3.2"
 )
+bintrayReleaseOnPublish in ThisBuild := false
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 
