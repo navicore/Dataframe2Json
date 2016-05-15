@@ -67,10 +67,10 @@ class Dataframe2JsonSpec extends FlatSpec with Matchers with BeforeAndAfter with
       Array("One", "Two", "Three", "Four"),
       sc
     )
-    //val json = Dataframe2Json(myDf, "/tmp/seeme.json")
-    val json = Dataframe2Json(myDf)
+    val json = Dataframe2Json(myDf, "/tmp/seeme.json")
+    //val json = Dataframe2Json(myDf)
     println(s"my json: $json.get")
-    json.get should have length 162
+    json.get should have length 152
   }
 
 }
