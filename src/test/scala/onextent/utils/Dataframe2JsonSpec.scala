@@ -27,7 +27,6 @@ class Dataframe2JsonSpec extends FlatSpec with Matchers with BeforeAndAfter with
 
   def df(data: List[String], types: Array[String], cols: Array[String], sc: SparkContext) = {
     val myRdd = sc.parallelize(data)
-    //val split = myRdd.map(line => {
     val split = myRdd.map(line => {
       val parser = new CSVParser(',')
       parser.parseLine(line)
@@ -75,3 +74,4 @@ class Dataframe2JsonSpec extends FlatSpec with Matchers with BeforeAndAfter with
   }
 
 }
+
