@@ -9,7 +9,7 @@ branches:
 scala:
 - 2.11.8
 jdk:
-- openjdk8
+- oraclejdk8
 script:
 - sbt compile test
 sudo: false
