@@ -13,14 +13,4 @@ jdk:
 script:
 - sbt compile test
 sudo: false
-after_success: 
-  - >
-    test "${TRAVIS_PULL_REQUEST}" = 'false' && 
-    test "${TRAVIS_TAG}" && 
-    sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" && 
-    sbt publish
-env:
-  global:
-  - secure: Nx0He2b+Dq+aNAGXmBABEbHdHW9uws0dw6tErdFZKiaArDvZveyNPAhYpqYU+3iXm4vfyjaE3dt9IQIGqyj8Qcnd1JNokVsqsSsJHg4WftZNkdlWfpFxoUsfyyofMjdQJuwrjd2F/mhiGVIkwoVxiovsqEtAtuTBetYrrXDp9UU=
-  - secure: D/x3ILsu3GnUoZp879r3GgDwiv42MNDB4nja5UzGQw7QUezgjDYo0b3MjK6PDKNb5aFRMShKNjl/hvH9nV+6ZcuAmoxsuLoSGGfE3hURKDq6rEiig9OXX5mFEzkjaf6Oc+cd+z6Ckk+rzBI15jOGgLC4LwpTw6oQ7MEcGUqK5DA=
 
